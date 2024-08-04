@@ -1,14 +1,9 @@
-import { useState } from 'react';
 import { useNavigate as useRouterNavigate } from 'react-router-dom';
 
 const useNavigate = () => {
     const navigateRoute = useRouterNavigate();
 
-    const navigate = ({ redirectPath = '', redirectTimeout = 0}) => {
-        if (!redirectPath) {
-            return;
-        }
-
+    const navigate = ({ redirectPath = '', redirectTimeout = 0 }) => {
         if (redirectTimeout === 0) {
             navigateRoute(redirectPath);
             return;
