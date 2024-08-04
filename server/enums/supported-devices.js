@@ -20,15 +20,10 @@ const getSupportedDeviceTypes = (brand) => {
     return [...new Set(supportedDevices.filter(device => device.brand === brand).map(device => device.type))];
 };
 
-const getDevice = (brand, type) => {
-    const device = supportedDevices.find(device => device.brand === brand && device.type === type);
-    if (!device) {
-        throw new Error(`Device ${brand} ${type} is not supported.`);
-    }
-    return device;
-}
+const getSupportedDevices = () => supportedDevices;
 
 export {
     getSupportedDeviceBrands,
-    getSupportedDeviceTypes
+    getSupportedDeviceTypes,
+    getSupportedDevices
 };
