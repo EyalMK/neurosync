@@ -1,4 +1,6 @@
-import '../vercel-setup.js';
+import setupVercel from '../vercel-setup.js';
+setupVercel();
+
 import container from '../containerConfig.js';
 
 const server = container.get('server');
